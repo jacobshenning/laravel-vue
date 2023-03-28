@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Setup base styles for theme.
+@import "bootstrap";
+
+// Setup naming convention
+$namespace: "";
+
+
