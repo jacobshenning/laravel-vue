@@ -19,8 +19,11 @@ const addComment = ((comment) => {
 
 });
 
-window.Echo.private('App.Models.Comment')
-    .listen('.CommentCreated', (e) => addComment(e.model))
+
+if (typeof window !== 'undefined') {
+    window.Echo.private('App.Models.Comment')
+        .listen('.CommentCreated', (e) => addComment(e.model));
+}
 
 </script>
 

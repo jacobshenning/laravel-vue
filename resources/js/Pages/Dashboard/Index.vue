@@ -23,9 +23,11 @@ const updateTask = ((task_id, data) => {
     }
 });
 
-window.Echo.private('App.Models.Task')
-    .listen('.TaskCreated', (e) => addTask(e.model.user.id, e.model))
-    .listen('.TaskUpdated', (e) => updateTask(e.model.id, e.model));
+if (typeof window !== 'undefined') {
+    window.Echo.private('App.Models.Task')
+        .listen('.TaskCreated', (e) => addTask(e.model.user.id, e.model))
+        .listen('.TaskUpdated', (e) => updateTask(e.model.id, e.model));
+}
 
 </script>
 

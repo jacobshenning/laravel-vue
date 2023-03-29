@@ -33,12 +33,14 @@ const updateStatus = ((status) => {
     }
 });
 
-window.Echo.private('App.Models.Status')
-    .listen('.StatusCreated', (e) => addStatus(e.model.project.id, e.model))
-    .listen('.StatusUpdated', (e) => updateStatus(e.model))
-    .listen('.StatusRestored', (e) => updateStatus(e.model))
-    .listen('.StatusTrashed', (e) => updateStatus(e.model))
-    .listen('.StatusDeleted', (e) => updateStatus(e.model));
+if (typeof window !== 'undefined') {
+    window.Echo.private('App.Models.Status')
+        .listen('.StatusCreated', (e) => addStatus(e.model.project.id, e.model))
+        .listen('.StatusUpdated', (e) => updateStatus(e.model))
+        .listen('.StatusRestored', (e) => updateStatus(e.model))
+        .listen('.StatusTrashed', (e) => updateStatus(e.model))
+        .listen('.StatusDeleted', (e) => updateStatus(e.model));
+}
 
 </script>
 

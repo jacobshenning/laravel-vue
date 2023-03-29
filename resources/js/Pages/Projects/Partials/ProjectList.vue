@@ -20,12 +20,14 @@ const updateProject = ((id, data) => {
 });
 
 
-window.Echo.private('App.Models.Project')
-    .listen('.ProjectCreated', (e) => addProject(e.model))
-    .listen('.ProjectRestored', (e) => updateProject(e.model.id, e.model))
-    .listen('.ProjectDeleted', (e) => updateProject(e.model.id, e.model))
-    .listen('.ProjectTrashed', (e) => updateProject(e.model.id, e.model))
-    .listen('.ProjectUpdated', (e) => updateProject(e.model.id, e.model));
+if (typeof window !== 'undefined') {
+    window.Echo.private('App.Models.Project')
+        .listen('.ProjectCreated', (e) => addProject(e.model))
+        .listen('.ProjectRestored', (e) => updateProject(e.model.id, e.model))
+        .listen('.ProjectDeleted', (e) => updateProject(e.model.id, e.model))
+        .listen('.ProjectTrashed', (e) => updateProject(e.model.id, e.model))
+        .listen('.ProjectUpdated', (e) => updateProject(e.model.id, e.model));
+}
 
 </script>
 
