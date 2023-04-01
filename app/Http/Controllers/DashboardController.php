@@ -23,11 +23,11 @@ class DashboardController extends Controller
         $projects = [];
 
         foreach($tasks as $task) {
-            $projects[] = $task->status->project;
+            $projects[] = $task->status()->withTrashed()->first()->project()->withTrashed()->first();
         }
 
         foreach ($projects as $project) {
-            $project->statuses;
+            $project->statuses()->withTrashed()->get();
         }
 
         return Inertia::render('Dashboard/Index', [

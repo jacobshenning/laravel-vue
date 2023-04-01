@@ -6,8 +6,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import {Link} from "@inertiajs/vue3";
 
 const navigation = [
-    { name: 'Project Page', href: '#' },
-    { name: 'My Website', href: '#' },
+    { name: 'Project Page', href: 'https://jacobhenning.com/' },
+    { name: 'React Website', href: 'https://react.jacobhenning.app/' },
+    { name: 'My Website', href: 'https://jacobhenning.com/' },
 ];
 
 
@@ -85,7 +86,7 @@ const mobileMenuOpen = ref(false)
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-                <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
+                <a v-for="item in navigation" target="_blank" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <Link href="login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>

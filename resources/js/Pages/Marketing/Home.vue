@@ -119,11 +119,11 @@ const featuress = [
             <div class="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
                     <div class="mt-24 sm:mt-32 lg:mt-16">
-                        <a href="#" class="inline-flex space-x-6">
+                        <a href="https://react.jacobhenning.app/" target="_blank" class="inline-flex space-x-6">
                             <span class="rounded-full bg-teal-600/10 px-3 py-1 text-sm font-semibold leading-6 text-teal-600 ring-1 ring-inset ring-teal-600/10">React vs Vue</span>
                             <span class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-<!--               <span>React App</span>-->
-<!--               <ChevronRightIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />-->
+               <span>React App</span>
+               <ChevronRightIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
              </span>
                         </a>
                     </div>
@@ -131,8 +131,7 @@ const featuress = [
                     <p class="mt-6 text-lg leading-8 text-gray-600">And what's more awesome? Building a laravel vue app with inertiajs. This revamp-project is an awesome chance for me to not only compare two awesome technologies but see how far they've come over that past 3 years. You can learn more on my website.</p>
                     <div class="mt-10 flex items-center gap-x-6">
                         <Link :href="route('login')" class="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">Try it out!</Link>
-                        <a href="https://www.jacobhenning.com" target="_blank" class="text-sm font-semibold leading-6 text-gray-900">Project Page <span aria-hidden="true">→</span>
-                        </a>
+                        <a href="https://www.jacobhenning.com" target="_blank" class="text-sm font-semibold leading-6 text-gray-900">Project Page <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
@@ -161,8 +160,7 @@ const featuress = [
                             <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
                                 <p class="flex-auto">{{ feature.description }}</p>
                                 <p class="mt-6">
-                                    <a :href="feature.href" class="text-sm font-semibold leading-6 text-teal-400">Learn more <span aria-hidden="true">→</span>
-                                    </a>
+                                    <a :href="feature.href" target="_blank" class="text-sm font-semibold leading-6 text-teal-400">Learn more <span aria-hidden="true">→</span></a>
                                 </p>
                             </dd>
                         </div>
