@@ -18,12 +18,17 @@ export default defineConfig(({ command, mode }) => {
     let homeDir = homedir()
     let serverConfig = {}
 
-    if (homeDir) {
+    // Only the dev server uses the Valet certificate. `vite build` has no
+    // server to configure, and a deploy target has no Valet to read from, so
+    // loading it unconditionally fails the build with ENOENT.
+    const certificate = homeDir
+        ? resolve(homeDir, `.config/valet/Certificates/${host}.key`)
+        : null
+
+    if (command === 'serve' && certificate && fs.existsSync(certificate)) {
         serverConfig = {
             https: {
-                key: fs.readFileSync(
-                    resolve(homeDir, `.config/valet/Certificates/${host}.key`),
-                ),
+                key: fs.readFileSync(certificate),
                 cert: fs.readFileSync(
                     resolve(homeDir, `.config/valet/Certificates/${host}.crt`),
                 ),
